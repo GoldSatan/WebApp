@@ -1,0 +1,177 @@
+{% extends 'base.html' %} {% block title %}
+<title>Add your transport</title>
+{% endblock %} {% block body %}
+
+<!--   name    type_transport   Color      Transmission    Mileage   Occasion   Price   Image  Engine  Note -->
+<section class="create">
+    <div class="upper-cb">
+        <div class="comment-box">
+            {% for cat, msg in get_flashed_messages(True) %}
+            <div class="flash {{cat}}">{{msg}}</div>
+            {% endfor %}
+            <form action="" class="comment-form" method="POST">
+                <div class="col">
+                    <div class="row">
+                        <div class="title">
+
+                            <!------------ title ------------>
+
+                            <h4><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-1-circle-fill" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd" d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0ZM9.283 4.002V12H7.971V5.338h-.065L6.072 6.656V5.385l1.899-1.383h1.312Z"/>
+                              </svg> In this section, you must enter basic information:</h4>
+                            <p>Full name of your transport</p>
+                            <input placeholder="Title" type="text" name="title" id="title" class="form-controll">
+
+                            <!------------ type_transport ------------>
+
+                            <div class="row-col">
+                                <div>
+                                    <p>Your type of transport</p>
+                                </div>
+                                <div>
+                                    <select name="type_transport" id="type_transport" class="combo form-controll">
+                                        <option value="0">Choose</option>
+                                        <option value="1">Motorcycle</option>
+                                        <option value="2">Car</option>
+                                        <option value="3">Truck</option>
+                                        <option value="4">Trailer</option>
+                                        <option value="5">Special equipment</option>
+                                        <option value="6">Agricultural</option>
+                                        <option value="7">Water</option>
+                                        <option value="8">Air</option>
+                                        <option value="9">Autohouse</option>
+                                    </select>
+                                </div>
+
+                            </div>
+
+                            <!------------ Color ------------>
+
+                            <div class="row-col">
+                                <div class="text">
+                                    <p> <br> Color</p>
+                                </div>
+                                <div>
+                                    <input placeholder="Color" type="text" name="color" id="color" class="form-controll">
+                                </div>
+                            </div>
+
+                            <!------------ Transmission ------------>
+
+                            <div class="row-col">
+                                <div class="text">
+                                    <p>Enter the transmission</p>
+                                </div>
+                                <div>
+                                    <select name="transmission" id="transmission" class="combo form-controll">
+                                        <option value="0">Choose</option>
+                                        <option value="1">Manual / Mechanics</option>
+                                        <option value="2">Manual</option>
+                                        <option value="3">Mechanics</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <!------------ mileage ------------>
+
+                            <div class="row-col">
+                                <div class="text">
+                                    <p><br>Enter mileage of your transport in kilometers</p>
+                                </div>
+                                <div>
+                                    <input placeholder="Mileage of your transport in kilometers" type="text" name="mileage" id="mileage" class="form-controll">
+                                </div>
+                            </div>
+
+                            <!------------ Occasion ------------>
+
+                            <div class="row-col">
+                                <div class="text">
+                                    <p>Enter the Occasion</p>
+                                </div>
+                                <div>
+                                    <select name="occasion" id="occasion" class="combo form-controll">
+                                        <option value="0">Choose</option>
+                                        <option value="1">Front</option>
+                                        <option value="2">Rear</option>
+                                        <option value="3">Full</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!------------ Price ------------>
+
+                    <div class="row">
+                        <div class="title">
+                            <h4><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-2-circle-fill" viewBox="0 0 16 16">
+                                <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0ZM6.646 6.24c0-.691.493-1.306 1.336-1.306.756 0 1.313.492 1.313 1.236 0 .697-.469 1.23-.902 1.705l-2.971 3.293V12h5.344v-1.107H7.268v-.077l1.974-2.22.096-.107c.688-.763 1.287-1.428 1.287-2.43 0-1.266-1.031-2.215-2.613-2.215-1.758 0-2.637 1.19-2.637 2.402v.065h1.271v-.07Z"/>
+                              </svg> In this section you must enter your proposed price</h4>
+                            <input placeholder="Your price" type="text" name="price" id="price" class="form-controll">
+                        </div>
+                    </div>
+
+                    <!------------ Image ------------>
+
+                    <div class="row">
+                        <div class="title">
+
+                            <h4><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-3-circle-fill" viewBox="0 0 16 16">
+                                <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0Zm-8.082.414c.92 0 1.535.54 1.541 1.318.012.791-.615 1.36-1.588 1.354-.861-.006-1.482-.469-1.54-1.066H5.104c.047 1.177 1.05 2.144 2.754 2.144 1.653 0 2.954-.937 2.93-2.396-.023-1.278-1.031-1.846-1.734-1.916v-.07c.597-.1 1.505-.739 1.482-1.876-.03-1.177-1.043-2.074-2.637-2.062-1.675.006-2.59.984-2.625 2.12h1.248c.036-.556.557-1.054 1.348-1.054.785 0 1.348.486 1.348 1.195.006.715-.563 1.237-1.342 1.237h-.838v1.072h.879Z"/>
+                              </svg> Add one or more photos with a visible vehicle registration number</h4>
+
+                            <label class="file">
+                                <input type="file" id="image" name="image" aria-label="File browser example">
+                                <span class="file-custom"></span>
+                            </label>
+
+                        </div>
+                    </div>
+
+                    <!------------ Engine ------------>
+
+                    <div class="row">
+                        <div class="title">
+                            <h4><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-4-circle-fill" viewBox="0 0 16 16">
+                                <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0ZM7.519 5.057c-.886 1.418-1.772 2.838-2.542 4.265v1.12H8.85V12h1.26v-1.559h1.007V9.334H10.11V4.002H8.176c-.218.352-.438.703-.657 1.055ZM6.225 9.281v.053H8.85V5.063h-.065c-.867 1.33-1.787 2.806-2.56 4.218Z"/>
+                              </svg> In this section, you must enter the Engine in format: 221 kW (300 hp), 1798 ccm </h4>
+                            <input placeholder="Engine in format: ' 221 kW (300 hp), 1798 ccm '" type="text" name="engine" id="engine" class="form-controll">
+                        </div>
+                    </div>
+
+                    <!------------ note ------------>
+
+                    <div class="row">
+                        <div class="note">
+
+                            <h4><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-5-circle-fill" viewBox="0 0 16 16">
+                                <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0Zm-8.006 4.158c1.74 0 2.924-1.119 2.924-2.806 0-1.641-1.178-2.584-2.56-2.584-.897 0-1.442.421-1.612.68h-.064l.193-2.344h3.621V4.002H5.791L5.445 8.63h1.149c.193-.358.668-.809 1.435-.809.85 0 1.582.604 1.582 1.57 0 1.085-.779 1.682-1.57 1.682-.697 0-1.389-.31-1.53-1.031H5.276c.065 1.213 1.149 2.115 2.72 2.115Z"/>
+                              </svg> In this section, you can enter the additional information or description</h4>
+                            <h5> The following are prohibited in this field:</h5>
+
+                            <span><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-info-circle" viewBox="0 0 16 16">
+                                <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+                                <path d="m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/>
+                              </svg> Offer services (used to order, there are other cars, I will help you choose)</span>
+
+                            <span><br/><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-info-circle" viewBox="0 0 16 16">
+                                <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+                                <path d="m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/>
+                              </svg> Leave a link or contact details</span>
+
+                            <textarea rows="12" placeholder="Additional information or description" name="note" id="note" class="form-controll"></textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <!------------ submit ------------>
+
+                <button class="btn hero-btn" type="submit">Add car</button>
+            </form>
+        </div>
+    </div>
+</section>
+
+
+{% endblock %}

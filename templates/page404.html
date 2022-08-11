@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+<!-----------------------------------------------
+    This page is designed so that 
+    when the user clicks on an incorrect link 
+    linked to our site, he sees a nice picture 
+    of our application instead 
+    of the standard error404 page from Google
+------------------------------------------------>
+{% block title %}
+<title>Page not fount </title>
+<style>
+    section.footer {
+        display: none;
+    }
+</style>
+{% endblock %}
+<!---->
+{% block body %}
+
+<h3>Page not fount!</h3>
+<p>Page not fount. Go in <a href="{{url_for('index')}}">HOME</a> page.</p>
+{% endblock %}

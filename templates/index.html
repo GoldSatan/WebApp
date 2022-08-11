@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+<!--------------------------------------
+this is the start page, 
+so we remove the header 
+and footer for a better visual appearance
+---------------------------------------->
+
+{% block title %}
+<title>vr cars</title>
+<style>
+    .other-header {
+        display: none;
+    }
+    
+    section.footer {
+        display: none;
+    }
+</style>
+{% endblock %}
+<!--body-->
+{% block body %}
+<header>
+    <section class="header">
+        <nav>
+            <a href="/"><img src="/static/images/logo.png"></a>
+            <div class="nav-links" id="navLinks">
+                <ul>
+                    <li> <a href="/">HOME</a></li>
+                    <li> <a href="/search">SEARCH</a></li>
+                    <li> <a href="/create">ADD</a></li>
+                    <li> <a href="/register">ACCOUNT</a></li>
+                </ul>
+            </div>
+        </nav>
+        <div class="text-box">
+            <h1>The best search site for your future car!</h1>
+            <p>A car is not just a mechanism, it is a way of life!</p>
+            <a href="/search" class="hero-btn">Start!</a>
+        </div>
+    </section>
+</header>
+{% endblock %}

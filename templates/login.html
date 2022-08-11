@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+<!-------------------------------------
+A page for logging in to created 
+accounts that should be in the database 
+--------------------------------------->
+{% block title %}
+<title>autorization</title>
+<style>
+    section.footer {
+        display: none;
+    }
+    
+    .comment-box {
+        width: 20%;
+        padding: 5px 15px 5px 15px;
+        border-radius: 5px;
+    }
+    
+    .inp-sub {
+        transition: 0.3s;
+    }
+    
+    .inp-sub:hover {
+        color: #fff;
+        background-color: #f44336;
+    }
+</style>
+{% endblock %}
+<!-- body -->
+{% block body %}
+<div class="login">
+    <!-- login form -->
+    <form action="/login" method="post">
+        <div class="container">
+            <h1>Sign Up</h1>
+            <p>Please fill in this form to create an account.</p>
+            <hr>
+
+            <!--        Username        -->
+            <label for="username"><b>Username</b></label>
+            <input type="text" placeholder="Enter username" name="username" required>
+
+            <!--        Password        -->
+            <label for="psw"><b>Password</b></label>
+            <input type="password" placeholder="Enter Password" name="psw" required>
+
+            <!--        Repeat Password        -->
+            <label for="psw-repeat"><b>Repeat Password</b></label>
+            <input type="password" placeholder="Repeat Password" name="psw-repeat" required>
+
+            <!--        checkbox        -->
+            <label>
+            <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
+            </label>
+
+            <!--        buttons        -->
+            <div class="clearfix">
+                <button type="button" class="cancelbtn">Cancel</button>
+                <button type="submit" class="signupbtn">Sign Up</button>
+            </div>
+        </div>
+    </form>
+</div>
+{% endblock %}
